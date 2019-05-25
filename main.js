@@ -1,39 +1,37 @@
-class List {
-  constructor() {
-    this.data = []
-  }
+const arr = [1, 3, 4, 5, 8, 9]
 
-  add(data) {
-    this.data.push(data)
-    console.log(this.data)
-  }
-}
+// Método 'MAP' percorre um vetor e consegue-se
+//  manipular os elementos do vetor
 
-class TodoList extends List {
-  constructor() {
-    super()
+const newArr = arr.map(function(item, index) {
+  return item + index
+})
 
-    this.usuario = 'Raphael'
-  }
+console.log(newArr)
 
-  mostraUsuario() {
-    console.log(this.usuario)
-  }
-}
+// Método 'RECDUCE' reune todos os elementos do vetor e 
+// transforma em uma unica informação
 
-class Math {
-  static soma(a,b) {
-    return a + b
-  }
-}
+const letters = ['R', 'a', 'p', 'h', 'a', 'e', 'l']
+const word = letters.reduce(function(total, next) {
+  return total + next
+})
 
-const MinhaLista = new TodoList()
-const $btn = document.querySelector('#novotodo')
+console.log(word)
 
-$btn.onclick = () => {
-  MinhaLista.add('Teste')
-}
+// Método 'FILTER' filtra um vetor e retorna no novo vetor
+// somente so valores que passam por análise de verdadeiro 
 
-MinhaLista.mostraUsuario()
+const filter = arr.filter(function(item) {
+  return item % 2 === 0
+})
 
-console.log(Math.soma(2,2))
+console.log(filter)
+
+// Método 'FIND' usado para emcontrar um elemento em um vetor
+
+const find = arr.find(function(item) {
+  return item === 4
+})
+
+console.log(find)
