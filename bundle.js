@@ -25,3 +25,12 @@ var find = arr.find(function (item) {
   return item === 4;
 });
 console.log(find);
+
+var teste = function teste() {
+  return {
+    nome: 'Raphael',
+    sobrenome: 'Ohlsen'
+  };
+};
+
+console.log(teste().sobrenome);
