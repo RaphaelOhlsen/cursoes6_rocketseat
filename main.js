@@ -1,26 +1,22 @@
-// 3.1
-const arr = [1, 2, 3, 4, 5]
-const arr2 = arr.map(item => item + 10)
+// 4.1
 
-console.log(arr2)
+const empresa = {
+  nome: 'Rocketseat',
+  endereco: {
+  cidade: 'Rio do Sul',
+  estado: 'SC',
+  }
+ };
 
-// 3.2
+ const { nome, endereco:{cidade}, endereco:{estado}} = empresa
 
-const usuario = { nome: 'Diego', idade: 23 };
+ console.log(nome) 
+ console.log(cidade) 
+ console.log(estado) 
 
-const mostraIdade = usuario => usuario.idade;
+ // 4.2
 
-console.log(mostraIdade(usuario))
-
-
-// 3.3
-// Dica: Utilize uma constante pra function
-const nome = "Diego";
-const idade = 23;
-const mostraUsuario = (nome = 'Diego', idade = 18) =>({ nome, idade })
-mostraUsuario(nome, idade)
-mostraUsuario(nome)
-
-// 3.4
-const promise = () => new Promise((resolve, reject) => resolve())
- 
+ function mostraInfo({ nome, idade }) {
+  return `${nome} tem ${idade} anos.`;
+ }
+ console.log (mostraInfo({ nome: 'Diego', idade: 23 }))
