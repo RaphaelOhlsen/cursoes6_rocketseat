@@ -1,6 +1,10 @@
 const nome = 'Raphael'
-const idade = 47
+const idade = 48
 
-console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
+const user = {
+  nome,
+  idade,
+  empresa: 'Nexel'
+}
 
-console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos')
+console.log(user)
