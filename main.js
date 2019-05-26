@@ -21,3 +21,11 @@ const usuarios = [
  const queryEmpresa = usuarios.find( ({ empresa }) => empresa === 'Google')
 
  console.log(queryEmpresa)
+
+ // 2.4 - Unindo Operações 
+
+ const queryIdade = usuarios
+  .map( usuario => ({ ...usuario, idade: usuario.idade * 2 }))
+  .filter( ({ idade }) => idade <= 50)
+
+ console.log(queryIdade)
