@@ -1,23 +1,23 @@
-class Usuario {
-  constructor(email, senha) {
-    this.email = email,
-    this.senha = senha
-  }
+// 2.1 - MAP
 
-  isAdmin() {
-    return this.admin === true
-  }
-}
+const usuarios = [
+  { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+  { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+  { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+ ]
 
-class Admin extends Usuario {
-  constructor() {
-    super(),
-    this.admin = true
-  }
-}
+ const idade = usuarios.map(usuario => usuario.idade)
 
-const User1 = new Usuario('email@teste.com', 'senha123')
-const Adm1 = new Admin('email@teste.com', 'senha123')
+ console.log(idade)
 
-console.log(User1.isAdmin())
-console.log(Adm1.isAdmin())
+ // 2.2 - FILTER
+
+ const query = usuarios.filter( ({ idade , empresa }) => ( idade >= 18 && empresa === 'Rocketseat'))
+
+ console.log(query)
+
+ // 2.3 - FIND 
+
+ const queryEmpresa = usuarios.find( ({ empresa }) => empresa === 'Google')
+
+ console.log(queryEmpresa)
