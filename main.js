@@ -1,10 +1,23 @@
-const nome = 'Raphael'
-const idade = 48
+class Usuario {
+  constructor(email, senha) {
+    this.email = email,
+    this.senha = senha
+  }
 
-const user = {
-  nome,
-  idade,
-  empresa: 'Nexel'
+  isAdmin() {
+    return this.admin === true
+  }
 }
 
-console.log(user)
+class Admin extends Usuario {
+  constructor() {
+    super(),
+    this.admin = true
+  }
+}
+
+const User1 = new Usuario('email@teste.com', 'senha123')
+const Adm1 = new Admin('email@teste.com', 'senha123')
+
+console.log(User1.isAdmin())
+console.log(Adm1.isAdmin())
