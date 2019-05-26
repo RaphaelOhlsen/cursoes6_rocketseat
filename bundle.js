@@ -1,27 +1,34 @@
 "use strict";
 
-// 4.1
-var empresa = {
-  nome: 'Rocketseat',
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// 5.1
+var arr = [1, 2, 3, 4, 5, 6];
+var x = arr[0],
+    y = arr.slice(1);
+console.log(x);
+console.log(y); // 5.2
+
+var usuario = {
+  nome: 'Diego',
+  idade: 23,
   endereco: {
     cidade: 'Rio do Sul',
-    estado: 'SC'
+    uf: 'SC',
+    pais: 'Brasil'
   }
 };
-var nome = empresa.nome,
-    cidade = empresa.endereco.cidade,
-    estado = empresa.endereco.estado;
-console.log(nome);
-console.log(cidade);
-console.log(estado); // 4.2
 
-function mostraInfo(_ref) {
-  var nome = _ref.nome,
-      idade = _ref.idade;
-  return "".concat(nome, " tem ").concat(idade, " anos.");
-}
+var usuario2 = _objectSpread({}, usuario, {
+  nome: 'Gabriel'
+});
 
-console.log(mostraInfo({
-  nome: 'Diego',
-  idade: 23
-}));
+var usuario3 = _objectSpread({}, usuario, {
+  cidade: 'Lontras'
+});
+
+console.log(usuario);
+console.log(usuario2);
+console.log(usuario3);

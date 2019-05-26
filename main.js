@@ -1,22 +1,28 @@
-// 4.1
+// 5.1
 
-const empresa = {
-  nome: 'Rocketseat',
+const arr = [1, 2, 3, 4, 5, 6]
+
+const [x, ...y] = arr
+
+console.log(x)
+console.log(y)
+
+// 5.2
+
+const usuario = {
+  nome: 'Diego',
+  idade: 23,
   endereco: {
   cidade: 'Rio do Sul',
-  estado: 'SC',
+  uf: 'SC',
+  pais: 'Brasil',
   }
- };
-
- const { nome, endereco:{cidade}, endereco:{estado}} = empresa
-
- console.log(nome) 
- console.log(cidade) 
- console.log(estado) 
-
- // 4.2
-
- function mostraInfo({ nome, idade }) {
-  return `${nome} tem ${idade} anos.`;
  }
- console.log (mostraInfo({ nome: 'Diego', idade: 23 }))
+
+ const usuario2 = { ...usuario, nome: 'Gabriel'}
+
+ const usuario3 = { ...usuario, cidade: 'Lontras'}
+
+ console.log(usuario)
+ console.log(usuario2)
+ console.log(usuario3)
