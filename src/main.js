@@ -1,5 +1,14 @@
-import ClasseUsuario, { idade as IdadeUsuario }  from './funcao'
+const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
 
-// console.log(idade)
-ClasseUsuario.info()
-console.log(IdadeUsuario)
+async function umPorSegundo() {
+  await delay();
+  console.log("1s");
+
+  await delay();
+  console.log("2s");
+
+  await delay();
+  console.log("3s");
+}
+
+umPorSegundo()
